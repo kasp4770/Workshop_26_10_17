@@ -1,6 +1,8 @@
 package OpgaveLoesning;
 
-public class Polymorfi {
+import java.util.ArrayList;
+
+public class PolymorfiTest {
     public static void main(String[] args) {
         //Polymorfi betyder at en variabel fra en supertype kan referere til et subtype objekt.
         // (poly = flere, morfism = former)
@@ -9,6 +11,12 @@ public class Polymorfi {
 
         //nyt objekt oprettet i en metode. Objektet er fra en subklasse og arver egenskaber fra dens superklasse
         displayObject(new Circle(1, "red", false));
+
+        ArrayList<Circle> circles = new ArrayList<>();
+
+        circles.add (new Circle (10));
+        circles.add(new Circle(25));
+
     }
 
     public static void displayObject(GeometricObject object){ //en metode som viser objektets data

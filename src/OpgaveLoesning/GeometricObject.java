@@ -43,5 +43,10 @@ public class GeometricObject {
         this.filled = filled;
     }
 
+    //Equals metode
+    public boolean equals(Object obj){ //Equals metoden i Object.java klassen
+        return (this == obj);
+    }
+
 
 }

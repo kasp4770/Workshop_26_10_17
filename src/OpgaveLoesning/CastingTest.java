@@ -3,7 +3,7 @@ package OpgaveLoesning;
 //Tænk almindelig casting
 //f.eks. tal = 3.5 --> (int)tal, for at tvinge compileren til at give en int i stedet for en double
 
-public class Casting {
+public class CastingTest {
     public static void main(String[] args) {
         Object object1 = new Circle(1);
         Object object2 = new Rectangle(1,1);

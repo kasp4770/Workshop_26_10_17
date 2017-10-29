@@ -1,6 +1,6 @@
 package OpgaveLoesning;
 
-public class Rectangle extends GeometricObject {
+public final class Rectangle extends GeometricObject {
     private double width;
     private double height;
 
