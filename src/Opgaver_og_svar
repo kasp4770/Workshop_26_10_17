@@ -10,7 +10,7 @@
     "1. Hvad er en superclass?". En subclass nedarver fra alle ovenstående klasser, og en subclass over en subclass må
     betragtes som en superclass til denne.
 
-    3.  Hvordan kan vi kalde superklassens constructor? Eksempel i kode. ------------------------
+    3.  Hvordan kan vi kalde superklassens constructor? Eksempel i kode.
     - Vis et eksempel på constructor chaining i din kode.
 
     4. Hvordan kan vi kalde superklassens metoder? Eksempel i kode.
@@ -111,7 +111,11 @@
        Eksempler på brugen af abstract metoder: PolymorfiTest.java
 
     2. Hvad er et interface? Eksempel i kode og i UML.
+       Svar: Et interface er en slags klasse som kun består af abstract metoder og konstanter.
+
        a. Hvad kan et interface bruges til? Eksempel i kode og i UML.
+       Svar: Det kan bruges til hvis et objekt nedarver fra flere superklasser. F.eks. en kylling: Det er både et dyr,
+       men også mad. så kan 'mad' være et interface hvor 'kylling' kan override metoder fra.
 
     3. Hvad  bruges Comparable interface til i Java? Eksempel i kode og i UML.
 
