@@ -2,7 +2,7 @@ package OpgaveLoesning;
 
 
 //Subclass af GeometricObject.java
-public class Circle extends GeometricObject {
+public class Circle extends GeometricObject implements GeoAppearance{
 
     private double radius;
 
@@ -46,5 +46,10 @@ public class Circle extends GeometricObject {
     @Override //Automatisk input fra intellij. Override
     public String toString() {
         return super.toString() + "\nradius is " + radius;
+    }
+
+    //Metoder hentet og override'et fra GeoAppearance interface
+    public String appearLike(){
+        return "Rund og helt uden kanter.";
     }
 }

@@ -25,6 +25,14 @@ public class PolymorfiTest {
         System.out.println("Arealet af cirkel 1 er " + geoObj.get(0).getArea()); //GeometricObject.getArea --> Circle --> Circle.getArea
         System.out.println("Arealet af cirkel 2 er " + geoObj.get(1).getArea());
         System.out.println("Arealet af rektankel 1 er " + geoObj.get(2).getArea()); //GeometricObject.getArea --> Rectangle --> Rectangle.getArea
+
+        System.out.println();
+
+        //Brug af interface
+        Circle cir = new Circle(3);
+        Rectangle rec = new Rectangle(5, 10);
+        System.out.println("Objekt 1 fremstår som " + cir.appearLike());
+        System.out.println("objekt 3 fremstår som " + rec.appearLike());
     }
 
     public static void displayObject(GeometricObject object){ //en metode som viser objektets data

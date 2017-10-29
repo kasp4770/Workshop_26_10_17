@@ -1,6 +1,6 @@
 package OpgaveLoesning;
 
-public final class Rectangle extends GeometricObject {
+public final class Rectangle extends GeometricObject implements GeoAppearance {
     private double width;
     private double height;
 
@@ -44,5 +44,10 @@ public final class Rectangle extends GeometricObject {
     /** Return perimeter */
     public double getPerimeter() {
         return 2 * (width + height);
+    }
+
+    //Metoder hentet og override'et fra GeoAppearance interface
+    public String appearLike(){
+        return "Fire kanter, og er retvinklet.";
     }
 }
