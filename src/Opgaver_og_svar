@@ -1,0 +1,78 @@
+1. SPRINT: SUPERCLASS AND SUBCLASS
+
+    1.  Hvad er en superclass?
+    En superclass er den øverste klasse i et projekt, som subclasses er nedarvet fra. Den store forskel på Superclass og
+    almindelig nedarvning, med constructors, er at en superclass bliver nedarvet uden en constructor, istedet med koden:
+    public class "subclass" extends "superclass" { ... }
+
+    2.  Hvad er en subclass?
+    En subclass er en underklasse som nedarver metoder og variabler fra en superclass med koden "extends" som besvaret i
+    "1. Hvad er en superclass?". En subclass nedarver fra alle ovenstående klasser, og en subclass over en subclass må
+    betragtes som en superclass til denne.
+
+    3.  Hvordan kan vi kalde superklassens constructor? Eksempel i kode. ------------------------
+    - Vis et eksempel på constructor chaining i din kode.
+
+    4. Hvordan kan vi kalde superklassens metoder? Eksempel i kode.
+    Svar: Ved at skrive 'super' inden metodekaldet, f.eks. super.printCircle()
+
+    5. Hvad er forskellen mellem overriding methods og overloading methods i Java? Eksempel i kode.
+    Svar: Overloading er når man laver flere forskellige constructors eller metoder som har samme body men forskellige
+    arg's. Overloading i en subklasse der kalder på en superklasses metode/constructor, sker når man ændrer arg's. f.eks
+
+    class GeometricObjekt
+        public void setColor(String color)
+    class Circle
+        public void setColor(Int i)
+
+    Overriding sker når man i en subklasse kalder en metode eller en constructor fra superklassen, og ændre ind-
+    holdet i body'en/koden. Overriding kan kun ske så længe metoden man kalder på, ikke er 'static', og er 'public',
+    f.eks.
+    class GeometricObjekt
+            public String toString(){System.out.println("Jeg er en hest")}
+    class Circle
+            public String toString(){System.out.println("Nu er jeg er et mulddyr")}
+
+    6. Hvad er toString() metoden i Java? Eksempel i kode. ---------------------------
+
+2. SPRINT:
+
+    1. Vis et eksempel på at du overrider Object klassens toString() metode i din kode.
+       Svar: Circle.java linje 45
+
+    2. Hvad er polymorfi i Java? Vis eksempel i din kode.
+       Svar: Polymorfi.java
+
+    3. Hvad er object casting i Java? Vis eksempel i din kode.
+       Svar: (Casting.java)
+       Implicit casting: (sker automatisk "bag lyset")
+
+       Dyr d;
+       Hund h;
+
+       d(new Hund);
+       h(d);
+
+       er når et subobjekt refereres til at superobjekt. Et subobjekt kan altid referes til et
+       superobjekt(hund = dyr, æble = frugt) men ikke omvendt så hvis vi skal have et dyr til at opføre sig som en hund,
+       skal man benytte sig af..:
+       Explicit casting: eks.
+
+       Hund h = (Hund)d
+
+       Casting Objects er nødvendigt hvis du vil have (i dette opgaveløsning) et GeometricObject obj til at virke som f.eks. en
+              cirkel. Det vil give en compileerror hvis du siger (GeometricObject) obj.getDiameter, for metoden findes ikke i
+              GeometricObject.
+
+       a. Hvad gør instanceof? Vis eksempel i din kode.
+       Svar: instanceof er et java keyword som f.eks. kan bruges i et if/else statement. I mit eksempel:
+       Hvis (if) Objekt obj1 ligner(er en instans af) en cirkel --> udfør koden med cirkel.metoder.
+       Hvis (else if) Objekt obj1 ligner et rektankel --> udfør koden med rektankel.metoder.
+
+       b. Hvad gør Object klassens equals metode? Vis eksempel i din kode.
+       Svar:
+
+
+    4. Hvad er kan klassen ArrayList bruges til? Vis eksempel i din kode.
+
+    5. Hvordan kan du forhindre, at en klasse kan udvides med subclasses? Vis i din kode.
