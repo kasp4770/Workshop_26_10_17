@@ -25,15 +25,18 @@
     class Circle
         public void setColor(Int i)
 
-    Overriding sker når man i en subklasse kalder en metode eller en constructor fra superklassen, og ændre ind-
-    holdet i body'en/koden. Overriding kan kun ske så længe metoden man kalder på, ikke er 'static', og er 'public',
+    Overriding sker når man i en subklasse kalder en metode eller en constructor fra superklassen, og ændre indholdet i
+    body'en/koden. Overriding kan kun ske så længe metoden man kalder på, ikke er 'static', og er 'public',
     f.eks.
     class GeometricObjekt
             public String toString(){System.out.println("Jeg er en hest")}
     class Circle
             public String toString(){System.out.println("Nu er jeg er et mulddyr")}
 
-    6. Hvad er toString() metoden i Java? Eksempel i kode. ---------------------------
+    6. Hvad er toString() metoden i Java? Eksempel i kode.
+       Svar: toString() er en public metode i Object klassen, og er en metode der returnerer et String som beskriver
+       objektet. på linje 27 i GeometricObject.java er der et eksempel på toString metoden. Her er den 'overridden'
+       dvs. jeg har ændret koden/body'en så toString() returnerer noget andet end toString() i Object.java
 
 2. SPRINT:
 
@@ -60,19 +63,57 @@
 
        Hund h = (Hund)d
 
-       Casting Objects er nødvendigt hvis du vil have (i dette opgaveløsning) et GeometricObject obj til at virke som f.eks. en
-              cirkel. Det vil give en compileerror hvis du siger (GeometricObject) obj.getDiameter, for metoden findes ikke i
-              GeometricObject.
+       Casting Objects er nødvendigt hvis du vil have (i dette opgaveløsning) et GeometricObject obj til at virke som
+       f.eks. en cirkel. Det vil give en compileerror hvis du siger (GeometricObject) obj.getDiameter, for metoden
+       findes ikke i GeometricObject.
 
        a. Hvad gør instanceof? Vis eksempel i din kode.
        Svar: instanceof er et java keyword som f.eks. kan bruges i et if/else statement. I mit eksempel:
        Hvis (if) Objekt obj1 ligner(er en instans af) en cirkel --> udfør koden med cirkel.metoder.
        Hvis (else if) Objekt obj1 ligner et rektankel --> udfør koden med rektankel.metoder.
 
+       (object instanceof class)
+
        b. Hvad gør Object klassens equals metode? Vis eksempel i din kode.
-       Svar:
+       Svar: Equals metoden sammenligner to objekter og returnerer et boolean udtryk. For at den skal virke med f.eks.
+       cirkler, kræves det at man 'override'er metoden til at sammenligne radius. Metoden er skrevet på linje 47 i
+       GeometricObject.java (Standard fra Object.java). Et eksempel findes i EqualsTest.java samt en forklaring på
+       hvordan jeg kan override metoden så den virker på cirkler.
 
 
-    4. Hvad er kan klassen ArrayList bruges til? Vis eksempel i din kode.
+    4. Hvad kan klassen ArrayList bruges til? Vis eksempel i din kode.
+       Svar: Til at lave en liste af objekter. Eksempel i PolymorfiTest.java
 
     5. Hvordan kan du forhindre, at en klasse kan udvides med subclasses? Vis i din kode.
+       Svar: Ved at sætte 'final' ind før 'class' f.eks. public final class Rectangle
+       Mit eksempel er i Rectangle.java.
+
+3. SPRINT:
+
+    1. Hvad er en abstract class? Eksempel i kode og i UML.
+    Svar: en abstract class er en klasse som deler samme metoder som subclasser, dog uden body, da der f.eks. er forskel
+    på formlen i getArea() i hhv. rectangle.getArea() og circle.getArea().
+
+    a. Hvad kan en abstract method bruges til? Eksempel i kode og i UML.
+       Svar: En abstract method kan bruges hvis der bliver lavet et nyt objekt fra superklassen, men vil bruge
+       subclassernes metoder. Så laver man abstract metoder i superklassen, og når man kalder på f.eks.
+       (super)getArea(), så finder compileren selv ud af hvilken getArea() den skal bruge fra subclasserne. f.eks.
+
+       GeometricObject obj1 = new Circle(10);
+       GeometricObject obj2 = new Rectangle(10, 4);
+       Sout("Arealet af objekt 1: " + obj1.getArea)
+       Sout("Arealet af objekt 2: " + obj2.getArea)
+
+       Selvom getArea() i superklassen ikke er defineret, kan compileren alligevel godt finde ud af at den skal bruge
+       getArea() i hhv Circle og Rectangle klasserne.
+
+       Eksempler på abstract class og metoder: GeometricObject.java
+       Eksempler på brugen af abstract metoder: PolymorfiTest.java
+
+    2. Hvad er et interface? Eksempel i kode og i UML.
+       a. Hvad kan et interface bruges til? Eksempel i kode og i UML.
+
+    3. Hvad  bruges Comparable interface til i Java? Eksempel i kode og i UML.
+
+    4. Hvad  bruges Clonable interface til i Java? Eksempel i kode og i UML.
+
